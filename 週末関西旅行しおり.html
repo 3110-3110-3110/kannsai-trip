@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅行のしおり - 関西3泊4日の旅</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-blue: #3498db;
+            --accent-green: #2ecc71;
+            --accent-orange: #e67e22;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #333333;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #34495e);
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            margin: 10px 0 0 0;
+            opacity: 0.8;
+        }
+
+        .day-section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .day-title {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--accent-blue);
+            padding-bottom: 8px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 20px;
+            border-left: 2px solid #e2e8f0;
+            margin-bottom: 20px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--accent-blue);
+        }
+
+        .time {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-right: 10px;
+        }
+
+        .route-box {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid #ccc;
+            background-color: #f1f3f5;
+        }
+
+        .route-box.pattern-a {
+            border-left-color: var(--accent-green);
+            background-color: #f4fbf7;
+        }
+
+        .route-box.pattern-b {
+            border-left-color: var(--accent-orange);
+            background-color: #fffaf5;
+        }
+
+        .route-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .pattern-a .route-title { color: #27ae60; }
+        .pattern-b .route-title { color: #d35400; }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--accent-blue);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            margin: 10px 0;
+            transition: background-color 0.2s;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        .btn-map {
+            background-color: #e74c3c;
+        }
+
+        .btn-map:hover {
+            background-color: #c0392b;
+        }
+
+        .coupon-code {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-weight: bold;
+            border: 1px solid #ffeeba;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: #ffffff;
+        }
+
+        th, td {
+            border: 1px solid #dee2e6;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: #ffffff;
+        }
+
+        .shiori-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .spot-info {
+            background-color: #edf2f7;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        @media (min-width: 600px) {
+            header h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>✈️ 関西満喫旅行のしおり</h1>
+        <p>2026年6月26日(金) 〜 6月29日(月) 【3泊4日】</p>
+    </header>
+
+    <div class="day-section">
+        <h2 class="day-title">📅 1日目：6月26日（金） 出発・神戸へ</h2>
+        
+        <h3>🚆 空港への移動</h3>
+        <div class="timeline">
+            <div class="timeline-item"><span class="time">16:53</span>手稲駅 発（ゆせたゆ乗車）</div>
+            <div class="timeline-item"><span class="time">17:05</span>札幌駅 着</div>
+            <div class="timeline-item"><span class="time">17:11</span>札幌駅 発（♡あきたゆ♡合流）</div>
+            <div class="timeline-item"><span class="time">17:50</span>新千歳空港駅 着</div>
+        </div>
+
+        <h3>✈️ フライト</h3>
+        <div class="spot-info">
+            <strong>Peach MM118便</strong><br>
+            19:10 新千歳空港(CTS) 発 ➡ 21:30 関西国際空港(KIX) 着
+        </div>
+
+        <h3>🔀 関空到着後の条件分岐</h3>
+        <p>飛行機の到着状況に合わせて、以下のいずれかのルートを選択します。</p>
+
+        <div class="route-box pattern-a">
+            <div class="route-title">🟢 パターンA：21:50発の連絡バスに間に合う場合（おすすめ）</div>
+            <p>第2ターミナル連絡バスのりばからバスに乗車し、ベイシャトルで神戸空港へ向かいます。</p>
+            
+            <p><strong>バスのりば位置確認：</strong></p>
+            <img src="連絡バスのりば.png" alt="関西空港第2ターミナルビル バスのご案内" class="shiori-img">
+
+            <div class="timeline" style="margin-top:15px;">
+                <div class="timeline-item"><span class="time">21:50</span>第2ターミナル連絡バス 発 ➡ (約10分) ➡ 関西空港桟橋 着</div>
+                <div class="timeline-item"><span class="time">22:00</span>関西空港桟橋 発 ➡ (ベイシャトル) ➡ <span class="time">22:31</span>神戸空港 着</div>
+            </div>
+
+            <p>💡 <strong>チケット予約：</strong>バスに乗れると分かった時点で、スマホから急いで予約！</p>
+            <a href="https://knotco.jcld.jp/reserve/?station_id=2&src_toStationId=1&src_fromStationId=2&lang_cd=ja" target="_blank" class="btn">ベイシャトルを予約する</a>
+            <p>※クーポンコード <span class="coupon-code">U1325</span> 入力で、U25応援割が適用され運賃が 1,880円 ➡ <strong>1,000円</strong> になります！</p>
+
+            <h4>🚆 神戸空港からのポートライナー（三宮行）時刻表＆到着予想</h4>
+            <p>※神戸空港駅から三宮駅までは所要時間 <strong>19分</strong> です。</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>神戸空港駅 発</th>
+                        <th>三宮駅 到着予想</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>22:38 [普通]</td><td>22:57</td></tr>
+                    <tr><td>22:52 [普通]</td><td>23:11</td></tr>
+                    <tr><td>23:08 [普通]</td><td>23:27</td></tr>
+                    <tr><td>23:22 [普通]</td><td>23:41</td></tr>
+                    <tr><td>23:45 [普通]</td><td>24:04</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="route-box pattern-b">
+            <div class="route-title">🟡 パターンB：飛行機遅延などで連絡バスに間に合わない場合</div>
+            <p>21:57発の高速リムジンバスで直接、神戸三宮へ向かいます。</p>
+            <p><strong>運賃：</strong>2,200円 ／ <strong>のりば：</strong>④番のりば</p>
+            
+            <p><strong>のりば・切符売り場確認：</strong></p>
+            <img src="高速バス乗り場.png" alt="第2ターミナル リムジンバスのりば・おりば" class="shiori-img">
+            
+            <div class="timeline" style="margin-top:15px;">
+                <div class="timeline-item"><span class="time">21:57</span>関空第2ターミナル ④番のりば発 ➡ 高速バス ➡ 神戸三宮 着</div>
+            </div>
+        </div>
+
+        <h3>🏨 1日目の宿泊先</h3>
+        <a href="https://www.google.com/maps/place/BRENZA+HOTEL/@34.6945602,135.1945551,923m/data=!3m1!1e3!4m10!3m9!1s0x60008eefe3b5fcdb:0xa7e40fecd85713ef!5m3!1s2026-06-27!4m1!1i2!8m2!3d34.6945601!4d135.1971583!16s%2Fg%2F11f2txfx8_?entry=ttu&g_ep=EgoyMDI2MDYyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">📍 1日目のホテル（Google Maps）</a>
+        <div class="spot-info">
+            🌙 <strong>夜の予定：</strong><br>
+            チェックイン後、時間と体力があればホテルの目の前にあるラウンドワンへ！最近ハマっているUFOキャッチャーで遊びましょう！🕹️
+        </div>
+    </div>
+
+    <div class="day-section">
+        <h2 class="day-title">📅 2日目：6月27日（土） 兵庫〜大阪 気まま旅</h2>
+        <div class="timeline">
+            <div class="timeline-item"><span class="time">午前</span><strong>兵庫県内観光</strong><br>特に行き先を決めず、行きたいところへ気の向くままに旅しよう！</div>
+            <div class="timeline-item"><span class="time">午後</span><strong>大阪へ移動・観光</strong><br>大阪に移動。ここでも具体的なプランは決めず、その場のノリを大事に！</div>
+        </div>
+        
+        <h3>🏨 2日目の宿泊先</h3>
+        <a href="https://www.google.com/maps/place/%E3%82%B6+%E3%83%AD%E3%82%A4%E3%83%A4%E3%83%AB%E3%83%91%E3%83%BC%E3%82%AF%E3%83%9B%E3%83%86%E3%83%AB+%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%8B%E3%83%83%E3%82%AF+%E5%A4%A7%E9%98%AA%E5%BE%A1%E5%A0%82%E7%AD%8B/@34.6807637,135.4961154,1680m/data=!3m2!1e3!5s0x6000e6e3940e4fe9:0x33a95a7d95175319!4m10!3m9!1s0x6000e73c37fe5847:0x4d5a43ffe354de2c!5m3!1s2026-06-27!4m1!1i2!8m2!3d34.6871762!4d135.4999413!16s%2Fg%2F11flt09q1c?entry=ttu&g_ep=EgoyMDI2MDYyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">📍 2日目のホテル（Google Maps）</a>
+    </div>
+
+    <div class="day-section">
+        <h2 class="day-title">📅 3日目：6月28日（日） 大阪〜和歌山</h2>
+        <div class="timeline">
+            <div class="timeline-item"><span class="time">午前</span><strong>大阪観光</strong><br>前日に行けなかった場所や、美味しいものを食べに行こう。</div>
+            <div class="timeline-item"><span class="time">午後</span><strong>和歌山県へ移動</strong><br>和歌山へ入ります。</div>
+        </div>
+        
+        <h3>🏨 3日目の宿泊先</h3>
+        <a href="https://www.google.com/maps/place/%E3%83%AC%E3%83%95%E9%96%A2%E7%A9%BA%E6%B3%89%E4%BD%90%E9%87%8E+by+%E3%83%99%E3%83%83%E3%82%BB%E3%83%AB%E3%83%9B%E3%83%86%E3%83%AB%E3%82%BA/@34.4106959,135.3141884,961m/data=!3m1!1e3!4m10!3m9!1s0x6000c90d29997c35:0xc0f481cb0cf8e9d1!5m3!1s2026-06-27!4m1!1i2!8m2!3d34.4107665!4d135.3169423!16s%2Fg%2F11sy_3hl1z?entry=ttu&g_ep=EgoyMDI2MDYyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn btn-map">📍 3日目のホテル（Google Maps）</a>
+    </div>
+
+    <div class="day-section">
+        <h2 class="day-title">📅 4日目：6月29日（月） 帰路</h2>
+        <h3>🚆 関空への移動（朝は早め！）</h3>
+        <div class="timeline">
+            <div class="timeline-item"><span class="time">07:03</span>泉佐野駅 発（南海空港線・空港急行 関西空港行き）</div>
+            <div class="timeline-item"><span class="time">07:14</span>関西空港駅 着</div>
+            <div class="timeline-item"><span class="time">07:20頃</span>第2ターミナル連絡バス乗車 ➡ (約7分)</div>
+            <div class="timeline-item"><span class="time">07:30</span>第2ターミナル 到着見込み</div>
+        </div>
+
+        <h3>✈️ フライト（帰り）</h3>
+        <div class="spot-info">
+            <strong>Peach MM105便</strong><br>
+            08:40 関西国際空港(KIX) 発 ➡ 10:40 新千歳空港(CTS) 着
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
